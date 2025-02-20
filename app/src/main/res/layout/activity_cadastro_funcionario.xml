@@ -10,16 +10,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Título Centralizado -->
+        <TextView
+            android:id="@+id/tituloCadastro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cadastro de Funcionário"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
         <!-- Campo Nome -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nomeInputLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tituloCadastro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nomeEditText"
@@ -28,13 +42,32 @@
                 android:hint="Nome" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Campo Filhos -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filhosInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/nomeInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/filhosEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Número de Filhos"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Campo Matrícula -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/matriculaInputLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/nomeInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/filhosInputLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp">
@@ -120,7 +153,6 @@
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Botão Salvar -->
         <Button
             android:id="@+id/salvarButton"
             android:layout_width="0dp"
@@ -131,79 +163,7 @@
             app:layout_constraintTop_toBottomOf="@id/salarioBaseInputLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="20dp" />
 
-        <!-- Seção de Exibição dos Dados Salvos -->
-        <LinearLayout
-            android:id="@+id/comprovanteLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:padding="16dp"
-            android:background="?attr/colorSurface"
-            app:layout_constraintTop_toBottomOf="@id/salvarButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
-
-            <TextView
-                android:id="@+id/comprovanteTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Comprovante de Cadastro"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:paddingBottom="8dp" />
-
-            <TextView
-                android:id="@+id/comprovanteNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nome: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/comprovanteMatricula"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Matrícula: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/comprovanteCargo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cargo: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/comprovanteSetor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Setor: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/comprovanteCargaHoraria"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Carga Horária: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/comprovanteSalarioBase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Salário Base: "
-                android:textSize="16sp"
-                android:padding="4dp" />
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

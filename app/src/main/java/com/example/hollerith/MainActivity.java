@@ -13,12 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Referências aos botões
         Button cadastroFuncionarioButton = findViewById(R.id.cadastroFuncionarioButton);
+        Button cadastrosRealizadosButton = findViewById(R.id.cadastrosRealizadosButton);
         Button calculoSalarioButton = findViewById(R.id.calculoSalarioButton);
         Button calculosRealizadosButton = findViewById(R.id.calculosRealizadosButton);
 
-        // Ações dos botões
         cadastroFuncionarioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,17 +25,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cadastrosRealizadosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CadastrosRealizadosActivity.class));
+            }
+        });
+
         calculoSalarioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implementar ação para cálculo de salário
+
             }
         });
 
         calculosRealizadosButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implementar ação para exibir cálculos realizados
+
             }
         });
     }

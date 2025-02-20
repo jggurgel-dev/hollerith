@@ -22,11 +22,16 @@
             </intent-filter>
         </activity>
 
-        <!-- CadastroFuncionarioActivity -->
         <activity
             android:name=".CadastroFuncionarioActivity"
             android:exported="true"
             android:label="Cadastro de Funcionário"
+            android:theme="@style/Theme.Hollerith" />
+
+        <activity
+            android:name=".CadastrosRealizadosActivity"
+            android:exported="true"
+            android:label="Cadastros Realizados"
             android:theme="@style/Theme.Hollerith" />
     </application>
 </manifest>

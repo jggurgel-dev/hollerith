@@ -17,4 +17,7 @@ public interface FuncionarioDao {
 
     @Query("SELECT * FROM funcionarios")
     List<Funcionario> getAllFuncionarios();
+
+    @Query("SELECT * FROM funcionarios WHERE matricula = :matricula LIMIT 1")
+    Funcionario getFuncionarioByMatricula(String matricula);
 }
